@@ -1,0 +1,39 @@
+{
+  // 任意の名前
+  "name": "remote-java",
+  // DockerComposeFileを指定
+  "dockerComposeFile": "../docker/docker-compose.yml",
+  // DockerComposeFileにあるservice名を指定
+  "service": "java",
+  // コンテナに入ったときの作業ディレクトリ
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+        "settings": {
+            "terminal.integrated.defaultProfile.linux": "bash", // bashでターミナルを起動
+            "java.compile.nullAnalysis.mode": "automatic", // null解析のモード
+            "java.format.settings.profile": "GoogleStyle", // フォーマットスタイル
+            "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+            "java.import.gradle.wrapper.enabled": false, // Gradle拡張機能が用意する「gradle-wrapper.properties」ファイルからgradleを使用
+            "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current", // Java言語サーバーの起動に使用するJDKのフォルダ
+            "maven.executable.preferMavenWrapper": false, // Maven wrapperの使用を希望するかどうか
+            "redhat.telemetry.enabled": false, // テレメトリ（ソフトウェアの使用状況やパフォーマンスデータを収集）
+            "[java]": {
+                "editor.defaultFormatter": "redhat.java", // Java フォーマッター
+                "editor.formatOnPaste": true,
+                "editor.formatOnSave": true
+            }
+        },
+        "extensions": [
+            "vscjava.vscode-java-pack",
+            "vscjava.vscode-gradle",
+            "vmware.vscode-boot-dev-pack",
+            "vscjava.vscode-spring-initializr",
+            "gabrielbb.vscode-lombok",
+            "pivotal.vscode-boot-dev-pack",
+            "GitHub.copilot",
+            "GitHub.copilot-chat"
+        ]
+    }
+  }
+}
