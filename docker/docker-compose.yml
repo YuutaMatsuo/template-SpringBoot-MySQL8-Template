@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   java:
-    image: eclipse-temurin:17-jdk
+    image: eclipse-temurin:17
     container_name: java
     env_file:
       - ./mysql/.env # mysqlと同じものを指定
